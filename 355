@@ -1,0 +1,6 @@
+num = float(input("Введіть додатне дійсне число: "))
+
+decimal_part = num * 10  
+first_decimal_digit = int(decimal_part) % 10  
+
+print(first_decimal_digit)
