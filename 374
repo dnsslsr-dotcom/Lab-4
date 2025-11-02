@@ -1,0 +1,27 @@
+wordA = input("Введіть слово A (джерело букв): ")
+wordB = input("Введіть слово B (цільове слово): ")
+
+countA = {}
+for letter in wordA:
+    if letter in countA:
+        countA[letter] += 1
+    else:
+        countA[letter] = 1
+
+countB = {}
+for letter in wordB:
+    if letter in countB:
+        countB[letter] += 1
+    else:
+        countB[letter] = 1
+
+can_compose = True
+for letter, needed in countB.items():
+    if countA.get(letter, 0) < needed:
+        can_compose = False
+        break
+
+if can_compose:
+    print("Yes")
+else:
+    print("No")
